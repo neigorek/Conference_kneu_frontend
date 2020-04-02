@@ -1,0 +1,30 @@
+<!--Card-->
+<mdb-card class="p-3">
+
+  <!--Card image-->
+  <div class="view overlay waves-light rounded" mdbWavesEffect>
+    <mdb-card-img src="../../assets/conference-default-picture.jpg"></mdb-card-img>
+  </div>
+  <!--/.Card image-->
+
+  <!--Card content-->
+  <mdb-card-body>
+    <!--Title-->
+    <mdb-card-title>
+      <h4>{{conference.title1}}</h4>
+    </mdb-card-title>
+
+    <hr>
+
+    <!--Text-->
+    <mdb-card-text>
+      {{conference.description.slice(0, 50)}}
+    </mdb-card-text>
+
+    <button  (click)="onNavigateView(conference)" mdbBtn type="button" color="indigo" mdbWavesEffect>
+      БІЛЬШУ ПРО КОНФЕРЕНЦІЮ
+    </button>
+  </mdb-card-body>
+  <!--/.Card content-->
+</mdb-card>
+<!--/.Card-->

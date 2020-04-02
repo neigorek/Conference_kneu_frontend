@@ -1,0 +1,9 @@
+<div class="list-container">
+  <h1>НАШІ КОНФЕРЕНЦІЇ</h1>
+  <div class="content-container conference-list" *ngFor="let conference of conferenceList">
+    <app-conference-preview
+      [conference]="conference"
+      (navigateConferenceView)="openView($event)"
+    ></app-conference-preview>
+  </div>
+</div>

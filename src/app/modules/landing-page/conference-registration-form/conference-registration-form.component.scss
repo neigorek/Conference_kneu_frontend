@@ -1,0 +1,10 @@
+form {
+  text-align: center;
+
+  & .form-group {
+
+    & input {
+      padding: 1rem!important;
+    }
+  }
+}

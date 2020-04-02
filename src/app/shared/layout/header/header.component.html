@@ -1,0 +1,163 @@
+<!--Navbar-->
+<!--<header>-->
+<!--  <mdb-navbar class="header" SideClass="navbar fixed-top navbar-expand-lg navbar-dark indigo" [containerInside]="false">-->
+
+<!--    &lt;!&ndash; Navbar brand &ndash;&gt;-->
+<!--    <mdb-navbar-brand>-->
+<!--      <a class="navbar-brand" [routerLink]="'/landing'">-->
+<!--        <img src="../../../../assets/kneu_logo.png" width="100px" height="100px"/>-->
+<!--      </a>-->
+<!--    </mdb-navbar-brand>-->
+
+<!--    &lt;!&ndash; Collapsible content &ndash;&gt;-->
+<!--    <links>-->
+
+<!--      &lt;!&ndash; Links &ndash;&gt;-->
+<!--      <ul class="navbar-nav ml-auto">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="'/landing'">-->
+<!--            <i class="fas fa-file-alt"></i>ГОЛОВНА-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link waves-light" [routerLink]="'/landing/conferences'"-->
+<!--             routerLinkActive="active" mdbWavesEffect>-->
+<!--            <i class="fas fa-list"></i> НАШІ КОНФЕРЕНЦІЇ-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link waves-light" mdbWavesEffect routerLinkActive="active"-->
+<!--             [routerLink]="'/landing/about'">-->
+<!--            <i class="fas fa-university"></i>ПРО НАС-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link waves-light" mdbWavesEffect routerLinkActive="active"-->
+<!--             [routerLink]="'/landing/reg'">-->
+<!--            <i class="fas fa-pen"></i>РЕЕСТРАЦІЯ-->
+<!--          </a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link waves-light" mdbWavesEffect (click)="frame.show()">-->
+<!--            <mdb-icon fas icon="login"></mdb-icon> Login </a>-->
+<!--        </li>-->
+
+<!--        &lt;!&ndash; Dropdown &ndash;&gt;-->
+<!--        <li class="nav-item dropdown" dropdown *ngIf="false">-->
+<!--          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>-->
+<!--            <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>-->
+<!--          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">-->
+<!--            <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>-->
+<!--            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>-->
+<!--          </div>-->
+<!--        </li>-->
+
+<!--      </ul>-->
+<!--      &lt;!&ndash; Links &ndash;&gt;-->
+<!--    </links>-->
+<!--    &lt;!&ndash; Collapsible content &ndash;&gt;-->
+
+<!--  </mdb-navbar>-->
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark indigo">
+    <a class="navbar-brand" [routerLink]="'/'">
+      <img src="../../../../assets/kneu_logo.png" width="100px" height="100px"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="'/landing'">
+            <i class="fas fa-file-alt"></i>ГОЛОВНА
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" [routerLink]="'/landing/conferences'"
+             routerLinkActive="active" mdbWavesEffect>
+            <i class="fas fa-list"></i> НАШІ КОНФЕРЕНЦІЇ
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect routerLinkActive="active"
+             [routerLink]="'/landing/about'">
+            <i class="fas fa-university"></i>ПРО НАС
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect routerLinkActive="active"
+             [routerLink]="'/landing/reg'">
+            <i class="fas fa-pen"></i>РЕЕСТРАЦІЯ
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect (click)="frame.show()">
+            <mdb-icon fas icon="login"></mdb-icon> Login </a>
+        </li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown" dropdown *ngIf="false">
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+<!--</header>-->
+<!--/.Navbar-->
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="envelope" class="prefix grey-text"></mdb-icon>
+          <input type="email" id="defaultForm-email" [formControl]="loginFormModalEmail" class="form-control"
+                 mdbInput mdbValidate>
+          <label for="defaultForm-email">Your email</label>
+          <mdb-error
+            *ngIf="loginFormModalEmail.invalid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="loginFormModalEmail.valid && (loginFormModalEmail.dirty || loginFormModalEmail.touched)">Input
+            valid
+          </mdb-success>
+        </div>
+
+        <div class="md-form mb-4">
+          <mdb-icon fas icon="lock" class="prefix grey-text"></mdb-icon>
+          <input type="password" id="defaultForm-pass" [formControl]="loginFormModalPassword" class="form-control"
+                 mdbInput mdbValidate>
+          <label for="defaultForm-pass">Your password</label>
+          <mdb-error
+            *ngIf="loginFormModalPassword.invalid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
+            Input invalid
+          </mdb-error>
+          <mdb-success
+            *ngIf="loginFormModalPassword.valid && (loginFormModalPassword.dirty || loginFormModalPassword.touched)">
+            Input valid
+          </mdb-success>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button mdbBtn color="indigo" class="waves-light" mdbWavesEffect>Login</button>
+      </div>
+    </div>
+  </div>
+</div>

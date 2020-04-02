@@ -1,0 +1,19 @@
+.conference-view {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+
+  & .napryam-conference {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.registration-form {
+  display: flex;
+  justify-content: center;
+}

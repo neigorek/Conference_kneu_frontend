@@ -1,0 +1,24 @@
+<div class="conference-view" *ngIf="!regist && conferenceInstance">
+  <h1>{{conferenceInstance.name}}</h1>
+  <img *ngIf="conferenceInstance.image" [src]="conferenceInstance.image[0]">
+  <h3>{{conferenceInstance.title1}}</h3>
+  <div>{{conferenceInstance.dataStart}} - {{conferenceInstance.dataEnd}}</div>
+  <div>{{conferenceInstance.description}}</div>
+  <div class="napryam-conference col-md-4">
+    <h4>НАПРЯМИ РОБОТИ КОНФЕРЕНЦІЇ</h4>
+    <ul>
+      <li *ngFor="let vector of conferenceInstance.workVectors">
+        {{vector}}
+      </li>
+    </ul>
+  </div>
+  <div><button mdbBtn type="button" color="indigo" mdbWavesEffect (click)="onRegistration()">REGISTRATION</button></div>
+</div>
+<div *ngIf="regist" class="registration-form">
+  <app-conference-registration-form
+    class="col-md-9"
+    [file]="file"
+    (registrationFormSubmit)="registrationSubmit($event, conferenceInstance._id)"
+    (fileUp)="fileUploading($event)"
+  ></app-conference-registration-form>
+</div>

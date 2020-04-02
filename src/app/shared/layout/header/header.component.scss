@@ -1,0 +1,17 @@
+header {
+
+  & .active {
+    border: 1px white groove;
+  }
+}
+
+::ng-deep {
+  mdb-navbar {
+
+    .navbar {
+      position: fixed;
+      width: 100%;
+      height: 15%;
+    }
+  }
+}
