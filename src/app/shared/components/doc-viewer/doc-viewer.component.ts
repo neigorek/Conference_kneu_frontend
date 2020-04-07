@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-doc-viewer',
@@ -11,7 +10,7 @@ export class DocViewerComponent implements OnInit {
   @Input() stringSrc: string;
   isFrameLoad = false;
 
-  constructor(public domSanitizer: DomSanitizer) { }
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.isFrameLoad = false;
@@ -19,6 +18,7 @@ export class DocViewerComponent implements OnInit {
 
   onLoadiFrame($event) {
     this.isFrameLoad = true;
+    this.cdr.detectChanges();
   }
 
 }

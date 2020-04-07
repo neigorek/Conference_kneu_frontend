@@ -1,9 +1,8 @@
-<iframe (load)="onLoadiFrame($event)" class="i-frame" frameborder="0"
-        [src]="domSanitizer
-        .bypassSecurityTrustResourceUrl(
-        'https://docs.google.com/gview?url=http://conference-kneu.herokuapp.com/files/' +
-         stringSrc + '&embedded=true')"
-></iframe>
+<ngx-doc-viewer
+  class="i-frame"
+  (loaded)="onLoadiFrame($event)"
+  [url]="'http://conference-kneu.herokuapp.com/files/' + stringSrc"
+></ngx-doc-viewer>
 <div class="text-center" *ngIf="!isFrameLoad">
   <div class="spinner-border" role="status">
     <span class="sr-only">Loading...</span>
