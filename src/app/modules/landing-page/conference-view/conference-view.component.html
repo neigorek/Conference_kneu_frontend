@@ -1,3 +1,5 @@
+<i class="far fa-arrow-alt-circle-left" (click)="navigateBack()"></i>
+
 <div class="conference-view" *ngIf="!regist && conferenceInstance">
   <h1>{{conferenceInstance.name}}</h1>
   <img *ngIf="conferenceInstance.image" [src]="conferenceInstance.image[0]">

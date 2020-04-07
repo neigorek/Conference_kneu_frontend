@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-tezis-view',
@@ -12,21 +13,16 @@ export class TezisViewComponent implements OnInit {
       this.teza = tezisInfo;
     }
   }
+  @Output() navigateBack = new EventEmitter();
 
   isFrameLoad = false;
   teza;
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
     this.isFrameLoad = false;
 
   }
-  //
-  // onLoadiFrame($event) {
-  //   this.isFrameLoad = true;
-  // }
-
-
 
 }

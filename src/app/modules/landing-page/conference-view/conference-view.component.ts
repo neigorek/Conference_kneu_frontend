@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { Router } from '@angular/router';
 import { ConferenceService } from '../../../shared/services/conference.service';
 import { ToastrService } from 'ngx-toastr';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-conference-view',
@@ -20,7 +21,8 @@ export class ConferenceViewComponent implements OnInit {
     private landingService: LandingService,
     private conferenceService: ConferenceService,
     private toastrService: ToastrService,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -51,8 +53,10 @@ export class ConferenceViewComponent implements OnInit {
     this.conferenceService.registrationOnConference(idConf, regForm)
       .subscribe((res) => {
         this.toastrService.success('Registration Success');
+        this.onRegistration();
       }, (err) => {
         this.toastrService.error('Registration Error');
+        this.onRegistration();
       });
   }
 
@@ -68,5 +72,9 @@ export class ConferenceViewComponent implements OnInit {
         this.toastrService.error('File Upload Error');
 
       });
+  }
+
+  navigateBack() {
+    this.location.back();
   }
 }

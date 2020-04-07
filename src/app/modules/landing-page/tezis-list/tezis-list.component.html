@@ -1,8 +1,10 @@
 <!--Projects section v.2-->
-<section class="section text-center" *ngIf="isList">
+
+<section class="section" *ngIf="isList">
+  <i class="far fa-arrow-alt-circle-left" (click)="navigateBack()"></i>
 
   <!--Section heading-->
-  <h2 class="font-weight-bold h1 py-5">
+  <h2 class="font-weight-bold h1 py-5 text-center">
     <strong>ТЕЗИ НАШИХ КОНФЕРЕНЦІЙ</strong>
   </h2>
   <!--Section description-->
@@ -25,5 +27,5 @@
     </ng-container>
   </div>
 </section>
-<app-tezis-view *ngIf="!isList" [tezisInfo]="selectedTezis"></app-tezis-view>
+<app-tezis-view *ngIf="!isList" [tezisInfo]="selectedTezis" (navigateBack)="listShow()"></app-tezis-view>
 <!--/Projects section v.2-->

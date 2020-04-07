@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-conference-registration-form',
@@ -23,22 +24,24 @@ export class ConferenceRegistrationFormComponent implements OnInit {
   });
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
   }
 
   submitRegistrationForm() {
-    const formValue = this.registrationForm.value
+    const formValue = this.registrationForm.value;
 
     const formData = new FormData();
     for (let i = 0; i < formValue.length; i++) {
-      for (let key of formValue) {
+      for (const key of formValue) {
         formData.append(key, formValue[key]);
       }
     }
     this.registrationFormSubmit.emit(formValue);
+    this.registrationForm.reset();
   }
 
   onFileChoose(event) {
@@ -47,5 +50,4 @@ export class ConferenceRegistrationFormComponent implements OnInit {
       this.fileUp.emit(file);
     }
   }
-
 }
