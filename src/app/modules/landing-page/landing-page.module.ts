@@ -12,15 +12,21 @@ import { ConferenceRegistrationFormComponent } from './conference-registration-f
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConferenceComponent } from './conference/conference.component';
 import { CafedraInfoComponent } from './cafedra-info/cafedra-info.component';
+import { TezisListComponent } from './tezis-list/tezis-list.component';
+import { TezisViewComponent } from './tezis-view/tezis-view.component';
+import { FlexModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [LandingPageComponent, CafedraInfoPageComponent, ConferenceListComponent, ConferenceViewComponent, ConferenceRegistrationFormComponent, ConferenceComponent, CafedraInfoComponent],
+  declarations: [LandingPageComponent, CafedraInfoPageComponent,
+    ConferenceListComponent, ConferenceViewComponent,
+    ConferenceRegistrationFormComponent, ConferenceComponent, CafedraInfoComponent, TezisListComponent, TezisViewComponent],
     imports: [
         CommonModule,
         LandingPageRoutingModule,
         SharedModule,
         MDBRootModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FlexModule
     ]
 })
 export class LandingPageModule { }

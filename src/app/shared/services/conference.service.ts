@@ -13,7 +13,7 @@ export class ConferenceService {
   ) { }
 
   getConferenceList(): Observable<ConferenceModel[]> {
-    return this.httpClientService.get<ConferenceModel[]>('http://localhost:3000/conferences');
+    return this.httpClientService.get<ConferenceModel[]>('/conferences');
   }
 
   registrationOnConference(idConf: string, formBody) {
@@ -22,6 +22,11 @@ export class ConferenceService {
 
   fileUploading(formBody): Observable<any> {
     return this.httpClientService.post(`/upload`, formBody);
+  }
+
+  getFileByName(fileName: string): Observable<any> {
+    return this.httpClientService.get(`/files/${fileName}`);
+
   }
 
 }

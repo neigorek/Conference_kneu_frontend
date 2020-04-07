@@ -4,6 +4,11 @@
   <h3>{{conferenceInstance.title1}}</h3>
   <div>{{conferenceInstance.dataStart}} - {{conferenceInstance.dataEnd}}</div>
   <div>{{conferenceInstance.description}}</div>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <button mdbBtn type="button" color="indigo" mdbWavesEffect (click)="onRegistration()">REGISTRATION</button>
+    <button mdbBtn type="button" color="indigo" mdbWavesEffect (click)="onTezu()">ТЕЗИ КОНФЕРЕНЦІЇ</button>
+  </div>
+  <app-doc-viewer [stringSrc]="conferenceInstance.defaultDocument"></app-doc-viewer>
   <div class="napryam-conference col-md-4">
     <h4>НАПРЯМИ РОБОТИ КОНФЕРЕНЦІЇ</h4>
     <ul>
@@ -12,7 +17,9 @@
       </li>
     </ul>
   </div>
-  <div><button mdbBtn type="button" color="indigo" mdbWavesEffect (click)="onRegistration()">REGISTRATION</button></div>
+
+</div>
+  <div>
 </div>
 <div *ngIf="regist" class="registration-form">
   <app-conference-registration-form

@@ -25,4 +25,9 @@ export class ConferenceComponent implements OnInit {
     this.router.navigate([`landing/conferences/${conference._id}`]);
   }
 
+  openTezisView(conference) {
+    this.landingService.setConference(conference);
+    this.router.navigate([`landing/conferences/${conference._id}/tezis`]);
+  }
+
 }

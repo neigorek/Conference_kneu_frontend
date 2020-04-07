@@ -1,0 +1,18 @@
+<div fxFlex="100%" class="card card-cascade wider reverse">
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center">
+
+    <!-- Title -->
+    <h1 class="mt-2 mb-2"><strong>{{teza.docName}}</strong></h1>
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2">{{teza.lastName}} {{teza.firstName}}</h6>
+    <!-- Text -->
+    <a class="card-text" [href]="'https://conference-kneu.herokuapp.com/files/' + teza.fileName"><i
+      class="fas fa-paperclip"></i>Link
+      For Download</a>
+  </div>
+  <!-- Card image -->
+  <div class="view view-cascade overlay">
+    <app-doc-viewer [stringSrc]="teza.fileName"></app-doc-viewer>
+  </div>
+</div>

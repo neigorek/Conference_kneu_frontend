@@ -39,11 +39,15 @@ export class ConferenceViewComponent implements OnInit {
     this.regist = !this.regist;
   }
 
+  onTezu() {
+    this.router.navigate([`landing/conferences/${this.conferenceInstance._id}/tezis`]);
+  }
+
   registrationSubmit($event, idConf) {
     const regForm = {
       ...$event,
       fileName: this.file
-    }
+    };
     this.conferenceService.registrationOnConference(idConf, regForm)
       .subscribe((res) => {
         this.toastrService.success('Registration Success');
@@ -58,7 +62,7 @@ export class ConferenceViewComponent implements OnInit {
     formBody.append('file', f);
     this.conferenceService.fileUploading(formBody)
       .subscribe((res) => {
-        this.file = res.id;
+        this.file = res.filename;
         this.toastrService.success('File Upload Success');
       }, (err) => {
         this.toastrService.error('File Upload Error');

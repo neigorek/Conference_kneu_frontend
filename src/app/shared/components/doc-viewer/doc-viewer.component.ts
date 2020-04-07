@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-doc-viewer',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocViewerComponent implements OnInit {
 
-  constructor() { }
+  @Input() stringSrc: string;
+  isFrameLoad = false;
+
+  constructor(public domSanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+    this.isFrameLoad = false;
+  }
+
+  onLoadiFrame($event) {
+    this.isFrameLoad = true;
   }
 
 }

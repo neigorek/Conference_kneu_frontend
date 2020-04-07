@@ -9,6 +9,7 @@ import { SharedModule } from './shared/shared.module';
 import { ToastrModule } from 'ngx-toastr';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NgxDocViewerModule } from 'ngx-doc-viewer';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     CoreModule,
     MDBBootstrapModule.forRoot(),
     SharedModule,

@@ -1,118 +1,47 @@
-<!--Navbar-->
-<!--<header>-->
-<!--  <mdb-navbar class="header" SideClass="navbar fixed-top navbar-expand-lg navbar-dark indigo" [containerInside]="false">-->
-
-<!--    &lt;!&ndash; Navbar brand &ndash;&gt;-->
-<!--    <mdb-navbar-brand>-->
-<!--      <a class="navbar-brand" [routerLink]="'/landing'">-->
-<!--        <img src="../../../../assets/kneu_logo.png" width="100px" height="100px"/>-->
-<!--      </a>-->
-<!--    </mdb-navbar-brand>-->
-
-<!--    &lt;!&ndash; Collapsible content &ndash;&gt;-->
-<!--    <links>-->
-
-<!--      &lt;!&ndash; Links &ndash;&gt;-->
-<!--      <ul class="navbar-nav ml-auto">-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="'/landing'">-->
-<!--            <i class="fas fa-file-alt"></i>ГОЛОВНА-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link waves-light" [routerLink]="'/landing/conferences'"-->
-<!--             routerLinkActive="active" mdbWavesEffect>-->
-<!--            <i class="fas fa-list"></i> НАШІ КОНФЕРЕНЦІЇ-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link waves-light" mdbWavesEffect routerLinkActive="active"-->
-<!--             [routerLink]="'/landing/about'">-->
-<!--            <i class="fas fa-university"></i>ПРО НАС-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link waves-light" mdbWavesEffect routerLinkActive="active"-->
-<!--             [routerLink]="'/landing/reg'">-->
-<!--            <i class="fas fa-pen"></i>РЕЕСТРАЦІЯ-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link waves-light" mdbWavesEffect (click)="frame.show()">-->
-<!--            <mdb-icon fas icon="login"></mdb-icon> Login </a>-->
-<!--        </li>-->
-
-<!--        &lt;!&ndash; Dropdown &ndash;&gt;-->
-<!--        <li class="nav-item dropdown" dropdown *ngIf="false">-->
-<!--          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>-->
-<!--            <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>-->
-<!--          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">-->
-<!--            <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>-->
-<!--            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>-->
-<!--          </div>-->
-<!--        </li>-->
-
-<!--      </ul>-->
-<!--      &lt;!&ndash; Links &ndash;&gt;-->
-<!--    </links>-->
-<!--    &lt;!&ndash; Collapsible content &ndash;&gt;-->
-
-<!--  </mdb-navbar>-->
-
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark indigo">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo ie-nav fixed-top" [containerInside]="false">
+  <mdb-navbar-brand>
     <a class="navbar-brand" [routerLink]="'/'">
       <img src="../../../../assets/kneu_logo.png" width="100px" height="100px"/>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="'/landing'">
-            <i class="fas fa-file-alt"></i>ГОЛОВНА
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-light" [routerLink]="'/landing/conferences'"
-             routerLinkActive="active" mdbWavesEffect>
-            <i class="fas fa-list"></i> НАШІ КОНФЕРЕНЦІЇ
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect routerLinkActive="active"
-             [routerLink]="'/landing/about'">
-            <i class="fas fa-university"></i>ПРО НАС
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect routerLinkActive="active"
-             [routerLink]="'/landing/reg'">
-            <i class="fas fa-pen"></i>РЕЕСТРАЦІЯ
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-light" mdbWavesEffect (click)="frame.show()">
-            <mdb-icon fas icon="login"></mdb-icon> Login </a>
-        </li>
+  </mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect [routerLink]="'/landing'">
+          <i class="fas fa-file-alt"></i>ГОЛОВНА
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="'/landing/conferences'"
+           routerLinkActive="active" mdbWavesEffect>
+          <i class="fas fa-list"></i> НАШІ КОНФЕРЕНЦІЇ
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLinkActive="active"
+           [routerLink]="'/landing/about'">
+          <i class="fas fa-university"></i>ПРО НАС
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect (click)="frame.show()">
+          <mdb-icon fas icon="login"></mdb-icon> Login </a>
+      </li>
 
-        <!-- Dropdown -->
-        <li class="nav-item dropdown" dropdown *ngIf="false">
-          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-            <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
-          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-            <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
-            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
-          </div>
-        </li>
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" dropdown *ngIf="false">
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
+        </div>
+      </li>
 
-      </ul>
-
-    </div>
-  </nav>
-<!--</header>-->
-<!--/.Navbar-->
+    </ul>
+  </links>
+</mdb-navbar>
+<!-- /.Main -->
 <div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
      aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

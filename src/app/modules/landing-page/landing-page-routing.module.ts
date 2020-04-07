@@ -5,6 +5,8 @@ import { ConferenceViewComponent } from './conference-view/conference-view.compo
 import { ConferenceRegistrationFormComponent } from './conference-registration-form/conference-registration-form.component';
 import { ConferenceComponent } from './conference/conference.component';
 import { CafedraInfoComponent } from './cafedra-info/cafedra-info.component';
+import { TezisListComponent } from './tezis-list/tezis-list.component';
+import { TezisViewComponent } from './tezis-view/tezis-view.component';
 
 const routes: Routes = [
   {
@@ -20,14 +22,21 @@ const routes: Routes = [
     component: ConferenceViewComponent,
   },
   {
+    path: 'conferences/:id/tezis',
+    component: TezisListComponent,
+  },
+  {
+    path: 'conferences/:id/tezis/:id',
+    component: TezisViewComponent,
+  },
+  {
     path: 'about',
     component: CafedraInfoComponent,
   },
   {
     path: 'reg',
     component: ConferenceRegistrationFormComponent
-  }
-
+  },
 
 ];
 

@@ -9,9 +9,11 @@ export class LandingService {
 
   public conference: ConferenceModel;
   public conferencesList: ConferenceModel[];
+  public tezis: {};
 
   public conference$ = new BehaviorSubject<ConferenceModel>(this.conference);
   public conferencesList$ = new BehaviorSubject<ConferenceModel[]>(this.conferencesList);
+  public tezis$ = new BehaviorSubject<any>(this.tezis);
 
   constructor() { }
 
@@ -21,5 +23,9 @@ export class LandingService {
 
   setConferences(conferences) {
     this.conferencesList$.next(conferences);
+  }
+
+  setTezis(tezis) {
+    this.tezis$.next(tezis);
   }
 }

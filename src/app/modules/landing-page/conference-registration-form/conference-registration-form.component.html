@@ -1,39 +1,42 @@
 <!-- Extended default form grid -->
-<h1 class="text-center">ФОРМА РЕЕСТРАЦІЇ НА КОНФЕРЕНЦІЮ</h1>
-<form class="m-5 p-5" [formGroup]="registrationForm" (ngSubmit)="submitRegistrationForm()">
+<form class="ml-auto mr-auto" [formGroup]="registrationForm"
+      (ngSubmit)="submitRegistrationForm()" fxLayout="column"
+      fxLayoutAlign="center">
+  <h1 class="text-center" fxFlex="100%">ФОРМА РЕЕСТРАЦІЇ НА КОНФЕРЕНЦІЮ</h1>
+
   <!-- Grid row -->
-  <div class="form-group col-md-12">
+  <div class="form-group">
     <input mdbInput formControlName="docName" class="form-control" placeholder="Назва Доповіді">
   </div>
 
-  <div class="form-group col-md-12">
+  <div class="form-group">
     <input mdbInput formControlName="firstName" class="form-control" placeholder="Імя Доповідача">
   </div>
   <!-- Default input -->
-  <div class="form-group col-md-12">
+  <div class="form-group">
     <input mdbInput formControlName="lastName" class="form-control" placeholder="Прізвище Доповідача">
   </div>
   <!-- Default input -->
-  <div class="form-group col-md-12">
+  <div class="form-group">
     <input mdbInput type="text" formControlName="studyPlace" class="form-control"
            placeholder="Київський Національний Економічний Університет">
   </div>
   <!-- Default input -->
-  <div class="form-group col-md-12">
+  <div class="form-group">
     <input mdbInput type="text" formControlName="course" class="form-control"
            placeholder="Бакалавр: 4 ">
   </div>
 
-  <div class="form-group col-md-12">
+  <div class="form-group">
     <input mdbInput type="text" class="form-control" formControlName="tel"
            placeholder="+38050-111-11-11">
   </div>
   <!-- Default input -->
-  <div class="form-group col-md-12">
+  <div class="form-group">
     <input mdbInput type="email" class="form-control" formControlName="email" placeholder="kneu@kneu.com.ua">
   </div>
 
-  <div class="form-group col-md-12">
+  <div class="form-group">
     <input mdbInput type="file" class="form-control" (change)="onFileChoose($event)"
            placeholder="Виберіть файл Доповіді для Завантаження">
   </div>

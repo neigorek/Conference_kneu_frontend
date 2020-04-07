@@ -12,6 +12,7 @@ export class ConferenceModel {
   description: string;
   workVectors: [];
   image: string[];
+  defaultDocument: string;
   organizationPeople: {
     golova: {name: string; posada: string};
     zamGolova: [{name: string; posada: string}];
@@ -21,5 +22,6 @@ export class ConferenceModel {
     golova: {name: string; posada: string};
     zamGolova: [{name: string; posada: string}];
     chelenu: [{name: string; posada: string}];
-  }
+  };
+  documents: any[];
 }

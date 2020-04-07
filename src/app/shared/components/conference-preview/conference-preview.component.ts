@@ -10,6 +10,7 @@ export class ConferencePreviewComponent implements OnInit {
 
   @Input() conference: ConferenceModel;
   @Output() navigateConferenceView = new EventEmitter();
+  @Output() navigateConferenceTezisView = new EventEmitter();
 
   constructor() { }
 
@@ -18,5 +19,10 @@ export class ConferencePreviewComponent implements OnInit {
 
   onNavigateView(conference) {
     this.navigateConferenceView.emit(conference);
+  }
+
+  onNavigateTezisView(conference) {
+    this.navigateConferenceTezisView.emit(conference);
+
   }
 }
