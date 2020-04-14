@@ -1,12 +1,13 @@
-<div class="info-container" fxLayout="column" fxLayout.sm="column" fxLayout.md="row" fxLayout.lg="row">
-  <mdb-card class="text-center content-container mr-5">
-    <mdb-card-header>Кафедра інформаційних систем в економіці</mdb-card-header>
+<div class="info-container" fxLayout="column" fxLayout.sm="column" fxLayout.md="row" fxLayout.lg="row"
+     fxLayout.gt-lg="row">
+  <mdb-card fxFlex="80%" fxFlex.sm="80%" fxFlex.md="45%" fxFlex.lg="40%" class="text-center content-container mr-5">
+    <mdb-card-header><h2>Кафедра інформаційних систем в економіці</h2></mdb-card-header>
     <mdb-card-body>
       <mdb-card-title>
         <h5>Ресурс для Реестрації та Перегляду Інформації про Конференції Організовані ІІТЕ КНЕУ</h5>
       </mdb-card-title>
       <mdb-card-text>За Допомогою даного ресурсу Можно переглянути останню інформацію про конференції на
-        нашій накедрі та зарееструватися.
+        нашій кафедрі та зарееструватися.
       </mdb-card-text>
       <div class="text-center">
         <button mdbBtn type="button" color="indigo" mdbWavesEffect [routerLink]="'/landing/about'">
@@ -15,8 +16,14 @@
       </div>
     </mdb-card-body>
   </mdb-card>
-  <mdb-card class="text-center content-container">
-    <mdb-card-header><h2>ATTENTION <i class="fas fa-exclamation"></i> <i class="fas fa-exclamation"></i> <i class="fas fa-exclamation"></i></h2></mdb-card-header>
+  <mdb-card class="text-center content-container" fxFlex="80%" fxFlex.sm="80%" fxFlex.md="45%" fxFlex.lg="40%" >
+    <mdb-card-header>
+      <h2> ATTENTION
+        <i class="fas fa-exclamation"></i>
+        <i class="fas fa-exclamation"></i>
+        <i class="fas fa-exclamation"></i>
+      </h2>
+    </mdb-card-header>
     <mdb-card-body>
       <mdb-card-title>
         <h5>У ЗВЯЗКУ З КОРОНА_ВІРУСОМ, УСІ КОНФЕРЕНЦІЇ ПЕРЕНОСЯТЬСЯ В ОНЛАЙН ФОРМАТ</h5>

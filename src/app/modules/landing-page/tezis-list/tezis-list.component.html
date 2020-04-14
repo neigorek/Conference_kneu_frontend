@@ -17,15 +17,19 @@
     <ng-container *ngFor="let tezis of tezisList">
       <a class="list-group-item list-group-item-action flex-column align-items-start mt-3 mb-3"
          (click)="onNavigateTezisView(tezis)">
-        <div class="d-flex w-100 justify-content-between">
+        <div>
           <h5 class="mb-2 h5">{{tezis.docName}}</h5>
-          <small>{{tezis.lastName}}</small>
+          <div fxLayout="row">
+            <small>{{tezis.lastName}}</small>
+            <small>{{tezis.firstName}}</small>
+          </div>
         </div>
         <small>місце навчання: {{tezis.studyPlace}}</small>
-        <small>курс: {{tezis.course}}</small>
+        <small>{{tezis.course}}</small>
       </a>
     </ng-container>
   </div>
 </section>
-<app-tezis-view *ngIf="!isList" [tezisInfo]="selectedTezis" (navigateBack)="listShow()"></app-tezis-view>
+<app-tezis-view *ngIf="!isList" [loading]="loading" [tezisInfo]="selectedTezis" (navigateBack)="listShow()"
+                (addComm)="addCommentar($event)"></app-tezis-view>
 <!--/Projects section v.2-->

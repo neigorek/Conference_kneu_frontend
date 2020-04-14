@@ -1,20 +1,26 @@
 <i class="far fa-arrow-alt-circle-left" (click)="navigateBack.emit()"></i>
 
-<div fxFlex="100%" class="card card-cascade wider reverse">
+<div fxFlex="100%" class="card card-cascade wider reverse overflow-hidden">
   <!-- Card content -->
-  <div class="card-body card-body-cascade text-center">
+  <div fxFlex="10%" class="card-body card-body-cascade text-center">
 
     <!-- Title -->
     <h1 class="mt-2 mb-2"><strong>{{teza.docName}}</strong></h1>
     <!-- Subtitle -->
-    <h6 class="font-weight-bold indigo-text py-2">{{teza.lastName}} {{teza.firstName}}</h6>
+    <h6
+      class="font-weight-bold indigo-text py-2 d-flex"><span>{{teza.lastName}}</span>{{teza.firstName}}<span></span></h6>
     <!-- Text -->
     <a class="card-text" [href]="'https://conference-kneu.herokuapp.com/files/' + teza.fileName"><i
       class="fas fa-paperclip"></i>Link
       For Download</a>
   </div>
   <!-- Card image -->
-  <div class="view view-cascade overlay">
+  <div class="view view-cascade overlay" fxFlex="60%">
     <app-doc-viewer [stringSrc]="teza.fileName"></app-doc-viewer>
+  </div>
+
+  <div class="comment-section">
+    <app-comment-form [loading]="loading" (addCommentar)="addComment($event)"></app-comment-form>
+    <app-comments-section [commentsList]="teza.comments"></app-comments-section>
   </div>
 </div>

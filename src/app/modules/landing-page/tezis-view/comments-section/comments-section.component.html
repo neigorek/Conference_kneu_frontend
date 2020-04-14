@@ -1,0 +1,25 @@
+<div class="srollable-section pt-3" fxLayout="column" *ngIf="commentsList && commentsList.length > 0">
+  <h3 class="text-center">КОМЕНТАРІ</h3>
+  <div fxFlex="100%" fxLayout="row" fxLayoutAlign="space-between">
+    <div class="header-item">Author: &nbsp; </div>
+    <div class="header-item">Comment: &nbsp; </div>
+    <div class="header-item">Date: &nbsp; </div>
+  </div>
+  <ul class="list-group list-group-flush" *ngFor="let comment of commentsList">
+    <hr/>
+    <li class="list-group-item" fxLayout="row" fxLayoutAlign="space-between" fxFlex="100%">
+      <strong fxFlex="10%">
+          {{comment.name}}
+      </strong>
+      <strong class="pl-5 pr-3" fxLayout="row" fxFlex="80%">
+        {{comment.text}}
+      </strong>
+      <strong fxLayout="row" fxFlex="10%">
+        <div *ngIf="comment.date">{{changeDate(comment.date)}}</div>
+      </strong>
+    </li>
+  </ul>
+</div>
+<div class="text-center" *ngIf="!commentsList || commentsList.length === 0 ">
+  <h3>КОМЕНТАРІ</h3>
+</div>

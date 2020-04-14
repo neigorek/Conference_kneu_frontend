@@ -1,10 +1,14 @@
-<div class="list-container">
+<div class="list-container" fxLayout="column">
   <h1>НАШІ КОНФЕРЕНЦІЇ</h1>
-  <div class="content-container conference-list" *ngFor="let conference of conferenceList">
-    <app-conference-preview
-      [conference]="conference"
-      (navigateConferenceView)="openView($event)"
-      (navigateConferenceTezisView)="openTezisView($event)"
-    ></app-conference-preview>
+  <div fxLayout="column" fxLayout.sm="column" fxLayout.lg="row" fxLayout.md="row">
+    <div fxFlex.sm="80%" fxFlex="80%" fxFlex.md="35%" fxFlex.lg="25%"
+         class="content-container conference-list"
+         *ngFor="let conference of conferenceList">
+      <app-conference-preview
+        [conference]="conference"
+        (navigateConferenceView)="openView($event)"
+        (navigateConferenceTezisView)="openTezisView($event)"
+      ></app-conference-preview>
+    </div>
   </div>
 </div>

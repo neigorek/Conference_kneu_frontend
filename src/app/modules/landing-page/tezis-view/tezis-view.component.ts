@@ -13,7 +13,9 @@ export class TezisViewComponent implements OnInit {
       this.teza = tezisInfo;
     }
   }
+  @Input() loading;
   @Output() navigateBack = new EventEmitter();
+  @Output() addComm = new EventEmitter();
 
   isFrameLoad = false;
   teza;
@@ -25,4 +27,7 @@ export class TezisViewComponent implements OnInit {
 
   }
 
+  addComment(formValue) {
+    this.addComm.emit([formValue, this.teza._id]);
+  }
 }

@@ -1,0 +1,27 @@
+<h3 class="text-center">ДОДАТИ КОМЕНТАР</h3>
+<form [formGroup]="commentForm" (ngSubmit)="addComment($event)">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">@</span>
+    </div>
+    <input type="text" class="form-control" formControlName="name"
+           placeholder="Name" aria-label="Username"
+           aria-describedby="basic-addon1">
+  </div>
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Текст Коментаря</span>
+    </div>
+    <textarea class="form-control" formControlName="text" aria-label="With textarea"></textarea>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <button [disabled]="commentForm.invalid" fxLayout="row" type="submit" mdbBtn color="indigo" class="text-center">
+      <div>Коментувати</div>
+      <div class="spinner-border text-light" role="status" *ngIf="loading">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </button>
+
+  </div>
+</form>
+

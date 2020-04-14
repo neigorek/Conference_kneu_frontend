@@ -15,11 +15,13 @@ import { CafedraInfoComponent } from './cafedra-info/cafedra-info.component';
 import { TezisListComponent } from './tezis-list/tezis-list.component';
 import { TezisViewComponent } from './tezis-view/tezis-view.component';
 import { FlexModule } from '@angular/flex-layout';
+import { CommentsSectionComponent } from './tezis-view/comments-section/comments-section.component';
+import { CommentFormComponent } from './tezis-view/comment-form/comment-form.component';
 
 @NgModule({
   declarations: [LandingPageComponent, CafedraInfoPageComponent,
     ConferenceListComponent, ConferenceViewComponent,
-    ConferenceRegistrationFormComponent, ConferenceComponent, CafedraInfoComponent, TezisListComponent, TezisViewComponent],
+    ConferenceRegistrationFormComponent, ConferenceComponent, CafedraInfoComponent, TezisListComponent, TezisViewComponent, CommentsSectionComponent, CommentFormComponent],
     imports: [
         CommonModule,
         LandingPageRoutingModule,
