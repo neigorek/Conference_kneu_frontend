@@ -1,8 +1,8 @@
 <i class="far fa-arrow-alt-circle-left" (click)="navigateBack.emit()"></i>
 
-<div fxFlex="100%" class="card card-cascade wider reverse overflow-hidden">
+<div class="card card-cascade wider reverse overflow-hidden">
   <!-- Card content -->
-  <div fxFlex="10%" class="card-body card-body-cascade text-center">
+  <div class="card-body card-body-cascade text-center">
 
     <!-- Title -->
     <h1 class="mt-2 mb-2"><strong>{{teza.docName}}</strong></h1>
@@ -15,7 +15,7 @@
       For Download</a>
   </div>
   <!-- Card image -->
-  <div class="view view-cascade overlay" fxFlex="60%">
+  <div class="view view-cascade overlay">
     <app-doc-viewer [stringSrc]="teza.fileName"></app-doc-viewer>
   </div>
 
