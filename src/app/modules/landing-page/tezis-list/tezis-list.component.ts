@@ -46,10 +46,10 @@ export class TezisListComponent implements OnInit {
   addCommentar($event) {
     const id = this.selectedTezis._id;
     this.loading = true;
-    this.chatService.postComment($event[0], $event[1])
+    this.chatService.postComment($event[0], this.conference._id, $event[1])
       .subscribe((res) => {
         this.tezisList = res.documents;
-        this.selectedTezis = this.tezisList.find((tezis) => tezis._id = id);
+        this.selectedTezis = res.documents.find((tezis) => tezis._id === id);
         this.toastrService.success('Your Comment Success Add');
         this.loading = false;
       });

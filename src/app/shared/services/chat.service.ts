@@ -10,7 +10,7 @@ export class ChatService {
   constructor(private httpClient: HttpClient) { }
 
 
-  postComment(commentBody, docId: string): Observable<any> {
-    return this.httpClient.post(`/conference/comment/${docId}`, commentBody);
+  postComment(commentBody, id: string, docId: string): Observable<any> {
+    return this.httpClient.post(`/conference/${id}/comment/${docId}`, commentBody);
   }
 }
