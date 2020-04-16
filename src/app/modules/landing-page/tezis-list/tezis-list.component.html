@@ -5,29 +5,169 @@
 
   <!--Section heading-->
   <h2 class="font-weight-bold h1 py-5 text-center">
-    <strong>ТЕЗИ НАШИХ КОНФЕРЕНЦІЙ</strong>
+    <strong>ТЕЗИ УЧАСНИКІВ II МІЖНАРОДНОЇ НАУКОВО-ПРАКТИЧНОЇ КОНФЕРЕНЦІЇ МОЛОДИХ ВЧЕНИХ, АСПІРАНТІВ І СТУДЕНТІВ</strong>
+    <strong>«СУЧАСНІ ІНФОРМАЦІЙНІ ТЕХНОЛОГІЇ ТА СИСТЕМИ В УПРАВЛІННІ»</strong>
   </h2>
   <!--Section description-->
-  <p class="grey-text pb-5 text-center mx-xl-5 px-xl-5">Duis aute irure dolor in reprehenderit in voluptate
-    velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
+  <div fxLayout="row" fxLayoutAlign="center">
+    <input class="form-control form-control-sm mb-5 w-50 text-center" type="text"
+           placeholder="Пошук за Прізвищем"
+           aria-label="Search"
+           mdbInput [(ngModel)]="searchForm">
+  </div>
   <div class="list-group">
-    <ng-container *ngFor="let tezis of tezisList">
-      <a class="list-group-item list-group-item-action flex-column align-items-start mt-3 mb-3"
-         (click)="onNavigateTezisView(tezis)">
-        <div>
-          <h5 class="mb-2 h5">{{tezis.docName}}</h5>
-          <div fxLayout="row">
-            <small>{{tezis.lastName}}</small>
-            <small>{{tezis.firstName}}</small>
+    <ng-template #popTemplate> <div [innerHtml]="toolTipHtml"></div></ng-template>
+    <button fxLayoutAlign="space-between" mdbBtn color="primary" class="waves-light" [mdbTooltip]="popTemplate"
+            type="button"
+            (click)="sec1.toggle()"
+            mdbWavesEffect>
+      Цифрова економіка.ІНДУСТРІЯ 4.0.
+      <i class="fas fa-hand-point-up"></i>
+    </button>
+    <div mdbCollapse [isCollapsed]="tezisList[1].length === 0" #sec1="bs-collapse">
+      <ng-container *ngFor="let tezis of tezisList[1] | filter : searchForm">
+        <a class="list-group-item list-group-item-action flex-column align-items-start mt-3 mb-3"
+           (click)="onNavigateTezisView(tezis)">
+          <div>
+            <h5 class="mb-2 h5">{{tezis.docName}}</h5>
+            <pre fxLayout="row">{{tezis.lastName}} {{tezis.firstName}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.firstName2 && tezis.lastName2">{{tezis.firstName2}} {{tezis.lastName2}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.kerivnuk && tezis.kerivnuk.length > 2">Науковий керівник: {{tezis.kerivnuk}}</pre>
           </div>
-        </div>
-        <small>місце навчання: {{tezis.studyPlace}}</small>
-        <small>{{tezis.course}}</small>
-      </a>
-    </ng-container>
+          <small>місце навчання: {{tezis.studyPlace}}</small>
+          <small *ngIf="tezis.course.length > 3">({{tezis.course}})</small>
+        </a>
+      </ng-container>
+
+    </div>
+    <button fxLayoutAlign="space-between" [mdbTooltip]="popTemplate" mdbBtn color="primary" class="waves-light" type="button"
+             (click)="sec2.toggle()" mdbWavesEffect>
+      Інформаційні технології і системи у економіці, техніці, виробництві та екології.
+      <i class="fas fa-hand-point-up"></i>
+
+    </button>
+    <div mdbCollapse [isCollapsed]="tezisList[2].length === 0" #sec2="bs-collapse">
+      <ng-container *ngFor="let tezis of tezisList[2] | filter : searchForm">
+        <a class="list-group-item list-group-item-action flex-column align-items-start mt-3 mb-3"
+           (click)="onNavigateTezisView(tezis)">
+          <div>
+            <h5 class="mb-2 h5">{{tezis.docName}}</h5>
+            <pre fxLayout="row">{{tezis.lastName}} {{tezis.firstName}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.firstName2 && tezis.lastName2">{{tezis.firstName2}} {{tezis.lastName2}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.kerivnuk && tezis.kerivnuk.length > 2">Науковий керівник: {{tezis.kerivnuk}}</pre>
+          </div>
+          <small>місце навчання: {{tezis.studyPlace}}</small>
+          <small>({{tezis.course}})</small>
+        </a>
+      </ng-container>
+    </div>
+    <button fxLayoutAlign="space-between" mdbBtn color="primary" [mdbTooltip]="popTemplate" class="waves-light" type="button"
+             (click)="sec4.toggle()" mdbWavesEffect>
+      Математичні методи, моделі, інформаційні системи та технології в економіці.
+      <i class="fas fa-hand-point-up"></i>
+    </button>
+    <div mdbCollapse [isCollapsed]="tezisList[4].length === 0" #sec4="bs-collapse">
+      <ng-container *ngFor="let tezis of tezisList[4] | filter : searchForm">
+        <a class="list-group-item list-group-item-action flex-column align-items-start mt-3 mb-3"
+           (click)="onNavigateTezisView(tezis)">
+          <div>
+            <h5 class="mb-2 h5">{{tezis.docName}}</h5>
+            <pre fxLayout="row">{{tezis.lastName}} {{tezis.firstName}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.firstName2 && tezis.lastName2">{{tezis.firstName2}} {{tezis.lastName2}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.kerivnuk && tezis.kerivnuk.length > 2">Науковий керівник: {{tezis.kerivnuk}}</pre>
+          </div>
+          <small>місце навчання: {{tezis.studyPlace}}</small>
+          <small *ngIf="tezis.course.length > 3">({{tezis.course}})</small>
+        </a>
+      </ng-container>
+
+    </div>
+    <button fxLayoutAlign="space-between" mdbBtn color="primary" [mdbTooltip]="popTemplate" class="waves-light" type="button"
+             (click)="sec5.toggle()" mdbWavesEffect>
+      Системи і технології штучного інтелекту. Робототехніка. Гнучкі системі.
+      <i class="fas fa-hand-point-up"></i>
+    </button>
+    <div mdbCollapse [isCollapsed]="tezisList[5].length === 0" #sec5="bs-collapse">
+      <ng-container *ngFor="let tezis of tezisList[5] | filter : searchForm">
+        <a class="list-group-item list-group-item-action flex-column align-items-start mt-3 mb-3"
+           (click)="onNavigateTezisView(tezis)">
+          <div>
+            <h5 class="mb-2 h5">{{tezis.docName}}</h5>
+            <pre fxLayout="row">{{tezis.lastName}} {{tezis.firstName}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.firstName2 && tezis.lastName2">{{tezis.firstName2}} {{tezis.lastName2}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.kerivnuk && tezis.kerivnuk.length > 2">Науковий керівник: {{tezis.kerivnuk}}</pre>
+          </div>
+          <small>місце навчання: {{tezis.studyPlace}}</small>
+          <small *ngIf="tezis.course.length > 3">({{tezis.course}})</small>
+        </a>
+      </ng-container>
+    </div>
+    <button fxLayoutAlign="space-between" mdbBtn color="primary" [mdbTooltip]="popTemplate" class="waves-light" type="button"
+             (click)="sec6.toggle()" mdbWavesEffect>
+      Технології розробки програмного забезпечення
+      <i class="fas fa-hand-point-up"></i>
+    </button>
+    <div mdbCollapse [isCollapsed]="tezisList[6].length === 0" #sec6="bs-collapse">
+      <ng-container *ngFor="let tezis of tezisList[6] | filter : searchForm">
+        <a class="list-group-item list-group-item-action flex-column align-items-start mt-3 mb-3"
+           (click)="onNavigateTezisView(tezis)">
+          <div>
+            <h5 class="mb-2 h5">{{tezis.docName}}</h5>
+            <pre fxLayout="row">{{tezis.lastName}} {{tezis.firstName}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.firstName2 && tezis.lastName2">{{tezis.firstName2}} {{tezis.lastName2}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.kerivnuk && tezis.kerivnuk.length > 2">Науковий керівник: {{tezis.kerivnuk}}</pre>
+          </div>
+          <small>місце навчання: {{tezis.studyPlace}}</small>
+          <small *ngIf="tezis.course.length > 3">({{tezis.course}})</small>
+        </a>
+      </ng-container>
+
+    </div>
+    <button fxLayoutAlign="space-between" mdbBtn color="primary" [mdbTooltip]="popTemplate" class="waves-light" type="button"
+             (click)="sec7.toggle()" mdbWavesEffect>
+      Інноваційні комп'ютерні технології у науці і освіті
+      <i class="fas fa-hand-point-up"></i>
+    </button>
+    <div mdbCollapse [isCollapsed]="tezisList[7].length === 0" #sec7="bs-collapse">
+      <ng-container *ngFor="let tezis of tezisList[7] | filter : searchForm">
+        <a class="list-group-item list-group-item-action flex-column align-items-start mt-3 mb-3"
+           (click)="onNavigateTezisView(tezis)">
+          <div>
+            <h5 class="mb-2 h5">{{tezis.docName}}</h5>
+            <pre fxLayout="row">{{tezis.lastName}} {{tezis.firstName}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.firstName2 && tezis.lastName2">{{tezis.firstName2}} {{tezis.lastName2}}</pre>
+            <pre fxLayout="row" *ngIf="tezis.kerivnuk && tezis.kerivnuk.length > 2">Науковий керівник: {{tezis.kerivnuk}}</pre>
+          </div>
+          <small>місце навчання: {{tezis.studyPlace}}</small>
+          <small *ngIf="tezis.course.length > 3">({{tezis.course}})</small>
+        </a>
+      </ng-container>
+
+    </div>
+<!--    <button mdbBtn color="primary" [mdbTooltip]="popTemplate" class="waves-light" type="button" (click)="sec8.toggle()" mdbWavesEffect>-->
+<!--      ПРОЕКТУВАННЯ ТА РОЗРОБКА СИСТЕМИ ДОДАТКІВ-->
+<!--      <i class="fas fa-hand-point-up"></i>-->
+<!--    </button>-->
+<!--    <div mdbCollapse [isCollapsed]="tezisList[8].length === 0" #sec8="bs-collapse">-->
+<!--      <ng-container *ngFor="let tezis of tezisList[8] | filter : searchForm">-->
+<!--        <a class="list-group-item list-group-item-action flex-column align-items-start mt-3 mb-3"-->
+<!--           (click)="onNavigateTezisView(tezis)">-->
+<!--          <div>-->
+<!--            <h5 class="mb-2 h5">{{tezis.docName}}</h5>-->
+<!--            <pre fxLayout="row">-->
+<!--              {{tezis.lastName}} {{tezis.firstName}}-->
+<!--            </pre>-->
+<!--            <pre fxLayout="row" *ngIf="tezis.firstName2 && tezis.lastName2">{{tezis.firstName2}} {{tezis.lastName2}}</pre>-->
+<!--            <pre fxLayout="row" *ngIf="tezis.kerivnuk && tezis.kerivnuk.length > 2">-->
+<!--             Науковий керівник: {{tezis.kerivnuk}}-->
+<!--            </pre>-->
+<!--          </div>-->
+<!--          <small>місце навчання: {{tezis.studyPlace}}</small>-->
+<!--          <small *ngIf="tezis.course.length > 3">({{tezis.course}})</small>-->
+<!--        </a>-->
+<!--      </ng-container>-->
+
+<!--    </div>-->
   </div>
 </section>
 <app-tezis-view *ngIf="!isList" [loading]="loading" [tezisInfo]="selectedTezis" (navigateBack)="listShow()"

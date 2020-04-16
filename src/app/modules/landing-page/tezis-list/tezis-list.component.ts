@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ChatService } from '../../../shared/services/chat.service';
 import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tezis-list',
@@ -14,20 +15,33 @@ export class TezisListComponent implements OnInit {
 
   constructor(private landingService: LandingService, private router: Router,
               private location: Location, private chatService: ChatService,
-              private toastrService: ToastrService,
+              private toastrService: ToastrService, private fb: FormBuilder
   ) { }
 
-  tezisList;
+  tezisList = {
+    1: [] = [],
+    2: [] = [],
+    4: [] = [],
+    5: [] = [],
+    6: [] = [],
+    7: [] = [],
+    8: [] = [],
+  };
+  searchForm = '';
   isList = true;
   selectedTezis;
   conference;
   loading;
+  isCollapse = true;
+  toolTipHtml = `<strong>Згорнути</strong><i class="fas fa-hand-point-up"></i>`;
 
   ngOnInit(): void {
     this.landingService.conference$.subscribe((conference) => {
       if (conference && conference.documents && conference.documents.length > 0) {
         this.conference = conference;
-        this.tezisList = conference.documents;
+        conference.documents.map((doc) => {
+          this.tezisList[doc.confPart].push(doc);
+        });
       } else {
         this.router.navigate(['']);
       }

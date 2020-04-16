@@ -9,7 +9,7 @@ import { MDBRootModule } from 'angular-bootstrap-md';
 import { ConferenceListComponent } from './conference-list/conference-list.component';
 import { ConferenceViewComponent } from './conference-view/conference-view.component';
 import { ConferenceRegistrationFormComponent } from './conference-registration-form/conference-registration-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConferenceComponent } from './conference/conference.component';
 import { CafedraInfoComponent } from './cafedra-info/cafedra-info.component';
 import { TezisListComponent } from './tezis-list/tezis-list.component';
@@ -21,14 +21,17 @@ import { CommentFormComponent } from './tezis-view/comment-form/comment-form.com
 @NgModule({
   declarations: [LandingPageComponent, CafedraInfoPageComponent,
     ConferenceListComponent, ConferenceViewComponent,
-    ConferenceRegistrationFormComponent, ConferenceComponent, CafedraInfoComponent, TezisListComponent, TezisViewComponent, CommentsSectionComponent, CommentFormComponent],
-    imports: [
-        CommonModule,
-        LandingPageRoutingModule,
-        SharedModule,
-        MDBRootModule,
-        ReactiveFormsModule,
-        FlexModule
-    ]
+    ConferenceRegistrationFormComponent,
+    ConferenceComponent, CafedraInfoComponent, TezisListComponent,
+    TezisViewComponent, CommentsSectionComponent, CommentFormComponent],
+  imports: [
+    CommonModule,
+    LandingPageRoutingModule,
+    SharedModule,
+    MDBRootModule,
+    ReactiveFormsModule,
+    FlexModule,
+    FormsModule,
+  ]
 })
 export class LandingPageModule { }

@@ -8,7 +8,10 @@
     <h1 class="mt-2 mb-2"><strong>{{teza.docName}}</strong></h1>
     <!-- Subtitle -->
     <h6
-      class="font-weight-bold indigo-text py-2 d-flex"><span>{{teza.lastName}}</span>{{teza.firstName}}<span></span></h6>
+      class="font-weight-bold indigo-text py-2"><pre fxLayout="row">{{teza.lastName}} {{teza.firstName}}</pre></h6>
+    <h6
+      class="font-weight-bold indigo-text py-2" *ngIf="">
+      <pre fxLayout="row">{{teza.lastName}} {{teza.firstName}}</pre></h6>
     <!-- Text -->
     <a class="card-text" [href]="'https://conference-kneu.herokuapp.com/files/' + teza.fileName"><i
       class="fas fa-paperclip"></i>Link

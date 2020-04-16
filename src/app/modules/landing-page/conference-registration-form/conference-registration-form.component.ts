@@ -21,6 +21,8 @@ export class ConferenceRegistrationFormComponent implements OnInit {
     course: ['', Validators.required],
     tel: ['', Validators.required],
     email: ['', Validators.required],
+    kerivnuk: ['', Validators.required],
+    confPart: [''],
   });
 
   constructor(
