@@ -36,4 +36,9 @@ export class ConferenceListComponent implements OnInit {
     this.landingService.setConference(conference);
     this.router.navigate([`landing/conferences/${conference._id}/tezis`]);
   }
+
+  openProgram(conference) {
+    this.landingService.setConference(conference);
+    this.router.navigate([`landing/conferences/${conference._id}/program`]);
+  }
 }

@@ -16,7 +16,11 @@ export class ConferenceComponent implements OnInit {
 
   ngOnInit(): void {
     this.landingService.conferencesList$.subscribe((conference) => {
-      this.conferenceList = conference;
+      if (conference) {
+        this.conferenceList = conference;
+      } else {
+        this.router.navigate([`/landing`]);
+      }
     });
   }
 
@@ -28,6 +32,11 @@ export class ConferenceComponent implements OnInit {
   openTezisView(conference) {
     this.landingService.setConference(conference);
     this.router.navigate([`landing/conferences/${conference._id}/tezis`]);
+  }
+
+  openProgram(conference) {
+    this.landingService.setConference(conference);
+    this.router.navigate([`landing/conferences/${conference._id}/program`]);
   }
 
 }

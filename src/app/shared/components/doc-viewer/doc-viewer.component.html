@@ -2,6 +2,7 @@
   class="i-frame"
   (loaded)="onLoadiFrame($event)"
   [url]="'http://conference-kneu.herokuapp.com/files/' + stringSrc"
+  [disableContent]="isDisabled"
 ></ngx-doc-viewer>
 <div class="text-center" *ngIf="!isFrameLoad">
   <div class="spinner-border" role="status">

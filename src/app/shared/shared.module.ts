@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DocViewerComponent } from './components/doc-viewer/doc-viewer.component';
 import { NgxDocViewerModule } from 'ngx-doc-viewer';
 import { FilterPipe } from './pipes/filter.pipe';
+import { FlexModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, ConferencePreviewComponent, DocViewerComponent, FilterPipe],
@@ -26,6 +27,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     RouterModule,
     ReactiveFormsModule,
     NgxDocViewerModule,
+    FlexModule,
   ],
   entryComponents: []
 })

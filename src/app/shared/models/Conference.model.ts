@@ -10,6 +10,7 @@ export class ConferenceModel {
   dataStart: string | Moment | Date;
   dataEnd: string | Moment | Date;
   description: string;
+  programDocument: string;
   workVectors: [];
   image: string[];
   defaultDocument: string;

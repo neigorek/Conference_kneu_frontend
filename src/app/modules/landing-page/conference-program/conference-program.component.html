@@ -1,0 +1,12 @@
+<section>
+  <i class="far fa-arrow-alt-circle-left fa-lg" (click)="navigateBack()"></i>
+  <mdb-card fxFlex="100%" class="text-center content-container mr-5" *ngIf="conference">
+    <mdb-card-header><h2>{{conference.name}}</h2><h2>{{conference.title1}}</h2></mdb-card-header>
+    <mdb-card-body>
+      <mdb-card-title>
+        <h5>Программа Конференції</h5>
+      </mdb-card-title>
+      <app-doc-viewer [stringSrc]="conference.programDocument" [isDisabled]="'popout'"></app-doc-viewer>
+    </mdb-card-body>
+  </mdb-card>
+</section>

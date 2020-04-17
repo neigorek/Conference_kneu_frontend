@@ -20,13 +20,17 @@
     <mdb-card-text>
       {{conference.description.slice(0, 50)}}
     </mdb-card-text>
-
-    <button  (click)="onNavigateView(conference)" mdbBtn type="button" color="indigo" mdbWavesEffect>
-      БІЛЬШЕ ПРО КОНФЕРЕНЦІЮ
-    </button>
-    <button  (click)="onNavigateTezisView(conference)" mdbBtn type="button" color="indigo" mdbWavesEffect>
-      ТЕЗИ КОНФЕРЕНЦІЇ
-    </button>
+    <div fxLayout="row" fxLayoutAlign="space-between" fxLayout.md="column" fxLayout.sm="column">
+      <button  (click)="onNavigateView(conference)" mdbBtn type="button" color="indigo" mdbWavesEffect>
+        БІЛЬШЕ ПРО КОНФЕРЕНЦІЮ
+      </button>
+      <button  (click)="onNavigateTezisView(conference)" mdbBtn type="button" color="indigo" mdbWavesEffect>
+        ТЕЗИ КОНФЕРЕНЦІЇ
+      </button>
+      <button (click)="onNavigateProgram(conference)" mdbBtn type="button" color="indigo" mdbWavesEffect>
+        ПРОГРАМА КОНФЕРЕНЦІЇ
+      </button>
+    </div>
   </mdb-card-body>
   <!--/.Card content-->
 </mdb-card>

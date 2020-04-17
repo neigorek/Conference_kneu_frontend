@@ -11,6 +11,7 @@ export class ConferencePreviewComponent implements OnInit {
   @Input() conference: ConferenceModel;
   @Output() navigateConferenceView = new EventEmitter();
   @Output() navigateConferenceTezisView = new EventEmitter();
+  @Output() navigateConferenceProgram = new EventEmitter();
 
   constructor() { }
 
@@ -23,6 +24,9 @@ export class ConferencePreviewComponent implements OnInit {
 
   onNavigateTezisView(conference) {
     this.navigateConferenceTezisView.emit(conference);
+  }
 
+  onNavigateProgram(conference) {
+    this.navigateConferenceProgram.emit(conference);
   }
 }

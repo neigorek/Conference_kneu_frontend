@@ -8,6 +8,7 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 export class DocViewerComponent implements OnInit {
 
   @Input() stringSrc: string;
+  @Input() isDisabled = 'none';
   isFrameLoad = false;
 
   constructor(private cdr: ChangeDetectorRef) { }

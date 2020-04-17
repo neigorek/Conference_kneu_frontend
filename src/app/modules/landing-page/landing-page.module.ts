@@ -17,13 +17,14 @@ import { TezisViewComponent } from './tezis-view/tezis-view.component';
 import { FlexModule } from '@angular/flex-layout';
 import { CommentsSectionComponent } from './tezis-view/comments-section/comments-section.component';
 import { CommentFormComponent } from './tezis-view/comment-form/comment-form.component';
+import { ConferenceProgramComponent } from './conference-program/conference-program.component';
 
 @NgModule({
   declarations: [LandingPageComponent, CafedraInfoPageComponent,
     ConferenceListComponent, ConferenceViewComponent,
     ConferenceRegistrationFormComponent,
     ConferenceComponent, CafedraInfoComponent, TezisListComponent,
-    TezisViewComponent, CommentsSectionComponent, CommentFormComponent],
+    TezisViewComponent, CommentsSectionComponent, CommentFormComponent, ConferenceProgramComponent],
   imports: [
     CommonModule,
     LandingPageRoutingModule,
